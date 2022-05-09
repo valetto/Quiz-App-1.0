@@ -41,12 +41,12 @@ const callQuestionApi = (ID) => {
 
     hideInstructions();
     showLoader();
+    hideStartBtn();
 
     fetch(url)
     .then(response => response.json())
     .then(data => {
         hideLoader();
-        hideStartBtn();
         showQuiz();
         disableSubmitBtn();
         loadQuestionView(data.data);
