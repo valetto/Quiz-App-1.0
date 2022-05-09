@@ -40,13 +40,13 @@ const callQuestionApi = (ID) => {
     const url = ` https://jsonmock.hackerrank.com/api/questions/${ID}`;
 
     hideInstructions();
+    hideStartBtn();
     showLoader();
 
     fetch(url)
     .then(response => response.json())
     .then(data => {
         hideLoader();
-        hideStartBtn();
         showQuiz();
         disableSubmitBtn();
         loadQuestionView(data.data);
